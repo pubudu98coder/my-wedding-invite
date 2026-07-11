@@ -38,7 +38,6 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
   const [fadeClass, setFadeClass] = useState("opacity-0");
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [copiedKey, setCopiedKey] = useState<string | null>(null);
   const audioRef = useRef(null);
 
   // Untuk fade-in pertama kali
@@ -108,18 +107,13 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
     threshold: 0.5,
   });
 
-  const { ref: slide4Ref, inView: isSlide4InView } = useInView({
-    threshold: 0.5,
-  });
   const { ref: slide5Ref, inView: isSlide5InView } = useInView({
     threshold: 0.5,
   });
   const { ref: slide6Ref, inView: isSlide6InView } = useInView({
     threshold: 0.5,
   });
-  const { ref: slide7Ref, inView: isSlide7InView } = useInView({
-    threshold: 0.5,
-  });
+
   const { ref: slide8Ref, inView: isSlide8InView } = useInView({
     threshold: 0.5,
   });
