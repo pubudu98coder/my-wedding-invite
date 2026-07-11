@@ -19,10 +19,11 @@ const Form = () => {
       attendance: formData.get("attendance"),
       guests: formData.get("guests"),
       message: formData.get("message"),
+      wish: formData.get("wish"),
     };
 
 
-    if (!data.name || !data.attendance || !data.guests || !data.message) {
+    if (!data.name || !data.attendance || !data.guests ) {
       alert("All fields are required!");
       setLoading(false); 
       return;
@@ -52,7 +53,7 @@ const Form = () => {
       {/* Form fields */}
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-white">
-          Nama
+          Name
         </label>
         <input
           type="text"
@@ -68,7 +69,7 @@ const Form = () => {
           htmlFor="attendance"
           className="block text-sm font-medium text-white"
         >
-          Kehadiran
+          Will you be joining us? 
         </label>
         <select
           id="attendance"
@@ -76,9 +77,8 @@ const Form = () => {
           className="block w-full p-2 mt-1 bg-black/40 text-white border border-gray-300 rounded-md shadow-sm  sm:text-sm"
           required
         >
-          <option value="">Pilih Kehadiran</option>
-          <option value="Hadir">Hadir</option>
-          <option value="Tidak Hadir">Tidak Hadir</option>
+          <option value="accepted">❤️ Joyfully Accept</option>
+          <option value="rejected">🤍 Regretfully Decline</option>
         </select>
       </div>
 
@@ -87,7 +87,7 @@ const Form = () => {
           htmlFor="guests"
           className="block text-sm font-medium text-white"
         >
-          Jumlah Tamu
+          Number of Guests
         </label>
         <select
           id="guests"
@@ -95,7 +95,6 @@ const Form = () => {
           className="block w-full p-2 mt-1  bg-black/40 text-white border border-gray-300 rounded-md shadow-sm  sm:text-sm"
           required
         >
-          <option value="">Pilih Jumlah Tamu</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -108,14 +107,27 @@ const Form = () => {
           htmlFor="message"
           className="block text-sm font-medium text-white"
         >
-          Ucapan
+          Message
         </label>
         <textarea
           id="message"
           name="message"
-          rows={4}
+          rows={2}
           className="block w-full p-2 mt-1 bg-white/10 text-white border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-          required
+        />
+      </div>
+      <div>
+        <label
+          htmlFor="wish"
+          className="block text-sm font-medium text-white"
+        >
+          Wish
+        </label>
+        <textarea
+          id="wish"
+          name="wish"
+          rows={2}
+          className="block w-full p-2 mt-1 bg-white/10 text-white border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
       </div>
 

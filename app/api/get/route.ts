@@ -11,7 +11,12 @@ export async function GET(req: Request) {
     await connectToDatabase();
 
     // Fetch paginated wishes
-    const wishes = await Wish.find()
+  const wishes = await Wish.find({
+      wish: {
+        $exists: true,
+        $nin: [null, ""],
+      },
+    })
       .sort({ createdAt: -1 })
       .skip((page - 1) * limit)
       .limit(limit);

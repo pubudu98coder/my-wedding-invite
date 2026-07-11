@@ -39,7 +39,7 @@ const ScreenStart = () => {
     >
       <TypeAnimation
         sequence={[
-          "THE WEDDING OF",
+          "THE HOMECOMING OF",
           2000, 
           config.coupleNames.toUpperCase(),
           1000,
@@ -51,7 +51,7 @@ const ScreenStart = () => {
           display: "inline-block",
         }}
         className="font-legan text-sm"
-        repeat={0} // Animasi terus diulang
+        repeat={0}
       />
     </div>
   );

@@ -7,6 +7,7 @@ interface Wish {
   attendance: string;
   guests: number;
   message: string;
+  wish: string;
   createdAt: string;
 }
 
@@ -25,6 +26,7 @@ const WishesList = () => {
       }
 
       const data = await response.json();
+      
       setWishes(data.wishes);
       setTotalPages(data.totalPages);
     } catch (error) {
@@ -80,7 +82,7 @@ const WishesList = () => {
                   minute: "numeric",
                 })}
               </p>
-              <p className="text-sm">{wish.message}</p>
+              <p className="text-sm">{wish.wish}</p>
               <hr className="my-2 border-gray-400" />
             </div>
           ))
@@ -95,7 +97,7 @@ const WishesList = () => {
           }`}
           disabled={page === 1}
         >
-          Sebelumnya
+          Previous
         </button>
         <p className="text-xs">
           Page {page} of {totalPages}
@@ -107,7 +109,7 @@ const WishesList = () => {
           }`}
           disabled={page === totalPages}
         >
-          Selanjutnya
+          Next
         </button>
       </div>
     </div>

@@ -4,9 +4,9 @@ import Wish from "@/lib/models/Wish";
 
 export async function POST(req: Request) {
   try {
-    const { name, attendance, guests, message } = await req.json();
+    const { name, attendance, guests, message,wish } = await req.json();
     await connectToDatabase();
-    await Wish.create({ name, attendance, guests, message });
+    await Wish.create({ name, attendance, guests, message,wish });
 
     return NextResponse.json(
       {

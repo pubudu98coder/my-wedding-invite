@@ -9,7 +9,7 @@ const wishSchema = new Schema(
     attendance: {
       type: String,
       required: true,
-      enum: ["Hadir", "Tidak Hadir"],
+      enum: ["accepted", "rejected"],
     },
     guests: {
       type: Number,
@@ -19,7 +19,9 @@ const wishSchema = new Schema(
     },
     message: {
       type: String,
-      required: true,
+    },
+    wish: {
+      type: String,
     },
   },
   { timestamps: true }

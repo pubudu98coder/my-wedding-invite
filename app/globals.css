@@ -41,7 +41,7 @@ body {
   background-image: url(../public/foto_2.jpg);
   background-repeat: no-repeat;
   transition: 5s;
-  animation-name: animate;
+  /* animation-name: animate; */
   animation-direction: alternate-reverse;
   animation-play-state: running;
   animation-timing-function: ease-in-out;
