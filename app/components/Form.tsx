@@ -49,7 +49,7 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-8 space-y-4">
+    <form onSubmit={handleSubmit} className="mt-5 space-y-2">
       {/* Form fields */}
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-white">
@@ -59,7 +59,7 @@ const Form = () => {
           type="text"
           name="name"
           id="name"
-          className="block w-full p-2 mt-1 bg-white/10 text-white border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="block w-full p-1 mt-1 bg-white/10 text-white border border-gray-100 rounded-md shadow-sm focus:border-indigo-300 focus:ring-indigo-300 sm:text-sm"
           required
         />
       </div>

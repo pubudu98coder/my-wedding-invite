@@ -114,6 +114,10 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
     threshold: 0.5,
   });
 
+  const { ref: slide7Ref, inView: isSlide7InView } = useInView({
+    threshold: 0.5,
+  });
+
   const { ref: slide8Ref, inView: isSlide8InView } = useInView({
     threshold: 0.5,
   });
@@ -253,7 +257,7 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
           <>
             {/* Slide 1 */}
             <div
-              className={`text-white h-screen flex pt-12 p-5 px-12 snap-start `}
+              className={`text-white h-screen flex items-end pb-16 p-5 px-12 snap-start`}
               style={{
                 backgroundImage: `url(/slide_1.jpg)`,
                 backgroundSize: "cover",
@@ -261,57 +265,25 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
               }}
             >
               <FrameBox
-                className={` ${isSlide1InView ? "active" : ""}  fadeInMove`}
+                className={`mt-40 ${isSlide1InView ? "active" : ""} fadeInMove`}
               >
                 <div ref={slide1Ref}>
-                  <h1 className="text-xl md:text-2xl font-ovo tracking-wide text-white uppercase">
-                    {config.bibleVerse}
-                  </h1>
-                  <p className="text-sm mt-5 font-legan">
+                  {/* <h1 className="text-xl md:text-2xl font-ovo tracking-wide text-white uppercase">
+                    {"Heading"}
+                  </h1> */}
+                  <p className="text-l mt-3 font-legan">
                     {config.bibleVerseContent}
                   </p>
-                  <p className="text-6xl mt-5 font-wonder">
+                  {/* <p className="text-5xl mt-3 font-wonder">
                     {config.coupleNames}
-                  </p>
+                  </p> */}
                 </div>
               </FrameBox>
             </div>
             {/* Slide 2 */}
-            <div
-              className={`text-white h-screen flex items-end pb-16 px-12 snap-start `}
-              style={{
-                backgroundImage: `url(/slide_2.jpg)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              {/* Display the content when the button is clicked */}
-              <FrameBox
-                className={`fadeInMove ${isSlide2InView ? "active" : ""}  `}
-              >
-                <div ref={slide2Ref}>
-                  <p className="font-legan text-sm my-2">The Groom</p>
-                  <h1 className="text-xl md:text-3xl text-white  font-ovo">
-                    {config.groom}
-                  </h1>
-                  <h3 className="font-thesignature text-2xl">
-                    About {config.groomNickName},
-                  </h3>
-                  <p className="text-sm mt-5 font-legan text-[#CCCCCC]">
-                    {config.groomBio}
-                  </p>
-                  <Link
-                    href={`https://www.instagram.com/${config.groomInstagram}`}
-                    target="_blank"
-                    className="cursor-pointer hover:bg-black text-sm rounded-full flex items-center gap-x-2 text-center font-legan mt-5 bg-[#4E4E4E] w-fit px-4 py-2 text-[#CCCCCC]"
-                  >
-                    <FaInstagram /> {config.groomInstagram}
-                  </Link>
-                </div>
-              </FrameBox>
-            </div>
+            
             {/* Slide 3 */}
-            <div
+            {/* <div
               className="snap-start  text-white h-screen flex items-end pb-16 px-12 "
               style={{
                 backgroundImage: `url(/slide_3.jpg)`,
@@ -342,7 +314,7 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
                   </Link>
                 </div>
               </FrameBox>
-            </div>
+            </div> */}
             {/* Slide 4 */}
             {/* <div
               className="snap-start  text-white h-screen pt-8 flex px-12 "
@@ -528,6 +500,29 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
               </FrameBox>
             </div>
 
+            <div
+              className="snap-start  text-white h-screen flex flex-col items-center justify-end pb-16 px-12 "
+              style={{
+                backgroundImage: `url(/slide_6.jpg)`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <FrameBox
+                className={` ${isSlide7InView ? "active" : ""
+                  }  fadeInMove flex items-center flex-col`}
+              >
+                <div ref={slide7Ref} className="flex flex-col items-center">
+                  <h1 className="text-xl text-white font-ovo text-center uppercase">
+                    RSVP AND WISHES
+                  </h1>
+                  <p className="text-sm font-legan text-white/80 text-center">
+                    {config.rsvp.detail}
+                  </p>
+                </div>
+              </FrameBox>
+            </div>
+
             {/* SLIDE 8 */}
             {config.prewedding.enabled && (
               <div
@@ -584,12 +579,12 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
                   ref={slide9Ref}
                   className={`${isSlide9InView ? "active" : ""} fadeInMove`}
                 >
-                  <h1 className="text-3xl text-white font-ovo text-center uppercase">
+                  {/* <h1 className="text-xl text-white font-ovo text-center uppercase">
                     RSVP AND WISHES
                   </h1>
                   <p className="text-sm font-legan text-white/80 text-center">
                     {config.rsvp.detail}
-                  </p>
+                  </p> */}
 
                   <Form />
                 </div>
