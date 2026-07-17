@@ -55,9 +55,9 @@ body {
  45% {
   background-image: url(../public/foto_4.jpg);
  }
-  85% {
+  /* 85% {
     background-image: url(../public/foto_1.jpg);
-  }
+  } */
   100% {
     background-image: url(../public/foto_2.jpg);
   }
