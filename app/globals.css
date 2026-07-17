@@ -47,6 +47,7 @@ body {
     linear-gradient(180deg, #2a1b10 0%, #1c120a 50%, #0f0904 100%);
   transition: background 5s ease-in-out;
 }
+
 @keyframes animate {
  0% {
   background-image: url(../public/foto_2.jpg);
