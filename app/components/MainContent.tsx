@@ -197,7 +197,7 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
             }}
           />
 
-     
+        {/* commented */}
 
           {/* Hairline frame around the whole panel */}
           <div className="pointer-events-none absolute inset-4 border border-[#C8A165]/20" />
